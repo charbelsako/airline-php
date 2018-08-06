@@ -1,0 +1,6 @@
+add javascript
+to validate the form 
+    duration has to be greater than 0
+    origin and destination cannot be the same
+and maybe use ajax
+use pdo and prepared statements

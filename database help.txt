@@ -1,0 +1,43 @@
+getting the passengers/flights table
+
+getting the non passengers
+SELECT a.fname, a.lname
+FROM flights_passengers as fp 
+JOIN passengers AS a ON a.id <> fp.passenger_id
+JOIN flights AS f ON fp.flight_id = f.id
+JOIN airport AS b ON f.origin = b.id
+JOIN airport AS c ON f.destination = c.id
+WHERE f.id = 1
+
+
+SELECT a.fname, a.lname, b.code,b.city, c.code,c.city 
+FROM flights_passengers as fp 
+JOIN passengers AS a ON a.id = fp.passenger_id
+JOIN flights AS f ON f.id = fp.flight_id;
+JOIN airport AS b ON f.origin = b.id
+JOIN airport AS c ON f.destination = c.id
+
+SELECT a.fname, a.lname
+FROM flights_passengers as fp 
+JOIN passengers AS a ON a.id = fp.passenger_id
+JOIN flights AS f ON fp.flight_id = f.id
+JOIN airport AS b ON f.origin = b.id
+JOIN airport AS c ON f.destination = c.id
+
+using the same table twice
+
+SELECT a.id, a.duration, b1.city, b1.code, b2.city, b2.code
+FROM flights a
+JOIN airport b1 ON b1.id = a.origin
+JOIN airport b2 ON b2.id = a.destination
+
+
+SELECT flights.id, flights.duration, airport.code, airport.city, flights.destination
+FROM flights, airport 
+WHERE flights.origin = airport.id 
+
+SELECT flights.id, flights.duration, airport.code, airport.city FROM flights 
+INNER JOIN airport
+
+
+php will solve this problem "easily"
