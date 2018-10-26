@@ -1,7 +1,7 @@
 <? //handles adding a flight
 if(isset($_POST['submit']) && isset($_POST['destination']) && isset($_POST['origin']) && isset($_POST['duration']) ) {
     require('db_conx.php');
-    //variables that are send through the form
+    //variables that are sent through the form
     $duration = $_POST['duration'];
     $origin = $_POST['origin'];
     $destination = $_POST['destination'];
